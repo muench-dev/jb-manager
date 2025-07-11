@@ -27,7 +27,7 @@ jobs:
           chmod +x box.phar
 
       - name: Build PHAR
-        run: php box.phar build -c box.json.dist
+        run: php box.phar compile
 
       - name: Upload PHAR artifact
         uses: actions/upload-artifact@v4
