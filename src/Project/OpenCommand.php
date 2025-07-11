@@ -29,7 +29,7 @@ class OpenCommand extends Command
             )
             ->addArgument(
                 "project-name",
-                InputArgument::REQUIRED,
+                InputArgument::OPTIONAL,
                 "The name of the project to open."
             )
             ->addOption(
@@ -49,7 +49,21 @@ class OpenCommand extends Command
         $projectName = $input->getArgument("project-name");
         $ideCommand = $input->getOption("ide");
 
+        // If project name is not provided, ask interactively
+        if (!$projectName) {
+            $projects = $this->projectManager->getProjects();
+            if (empty($projects)) {
+                $io->error("No projects found.");
+                return Command::FAILURE;
+            }
+            $choices = array_map(fn($p) => $p['name'], $projects);
+            $projectName = $io->choice('Select a project to open', $choices);
+        }
+
         $projectPath = $this->projectManager->findProjectPath($projectName);
+
+        // Replace JetBrains variables in the project path
+        $projectPath = $this->resolvePathVariables($projectPath);
 
         if (!$projectPath) {
             $io->error("Project '{$projectName}' not found.");
@@ -78,5 +92,16 @@ class OpenCommand extends Command
 
         return Command::SUCCESS;
     }
-}
 
+    /**
+     * Replace JetBrains-style variables in the path with real values.
+     */
+    private function resolvePathVariables(string $path): string
+    {
+        $replacements = [
+            '$USER_HOME$' => getenv('HOME') ?: (getenv('USERPROFILE') ?: ''),
+            // Add more variable replacements here if needed
+        ];
+        return strtr($path, $replacements);
+    }
+}
