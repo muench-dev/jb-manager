@@ -1,5 +1,7 @@
 # JB Manager
 
+> **Note:** This tool is experimental and was generated with the help of AI Coding Agents.
+
 JB Manager is a PHP command-line tool for managing projects and groups, designed to work seamlessly with JetBrains tools. It provides commands to list, create, delete, move, and open projects and groups, making it easier to organize and handle multiple projects efficiently.
 
 ## Features
