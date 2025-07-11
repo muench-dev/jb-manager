@@ -28,9 +28,7 @@ composer install
 
 Alternatively, use the pre-built PHAR:
 
-```bash
-php jb-manager.phar
-```
+A compiled PHAR file is available for download in the [latest GitHub releases](https://github.com/muench-dev/jb-manager/releases).
 
 You can also compile your own PHAR using the [box](https://github.com/box-project/box) tool:
 
