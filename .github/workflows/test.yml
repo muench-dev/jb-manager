@@ -2,9 +2,19 @@ name: Run PHPUnit Tests
 
 on:
   push:
-    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'cli.php'
+      - 'composer.json'
+      - 'composer.lock'
   pull_request:
-    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'cli.php'
+      - 'composer.json'
+      - 'composer.lock'
 
 jobs:
   test:
@@ -25,4 +35,3 @@ jobs:
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit
-
