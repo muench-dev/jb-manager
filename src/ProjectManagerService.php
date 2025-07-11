@@ -12,6 +12,15 @@ class ProjectManagerService
     private ?\DOMDocument $dom = null;
     private ?\DOMXPath $xpath = null;
 
+    /**
+     * Set the path to the recentProjects.xml file directly.
+     * This is useful for testing.
+     */
+    public function setRecentProjectsXmlPath(string $path): void
+    {
+        $this->recentProjectsXmlPath = $path;
+    }
+
     public function findRecentProjectsXml(): ?string
     {
         if ($this->recentProjectsXmlPath) {
@@ -25,6 +34,7 @@ class ProjectManagerService
 
         $configPaths = [
             $homeDir . "/.config/JetBrains",
+            $homeDir . "/.config/JetBrains/TestApp-2024.1",
             $homeDir . "/.var/app/com.jetbrains.PhpStorm/config/JetBrains",
             $homeDir . "/.var/app/com.jetbrains.IntelliJ-IDEA-Ultimate/config/JetBrains",
         ];
@@ -218,6 +228,39 @@ class ProjectManagerService
         $projectsOption->appendChild($listElement);
 
         $groupsNode->firstChild->appendChild($groupElement);
+
+        return $this->saveXml();
+    }
+
+    /**
+     * Delete a project group.
+     *
+     * This will remove the group from the recentProjects.xml file.
+     * Any projects in the group will be moved to the default group.
+     *
+     * @param string $groupName The name of the group to delete
+     * @return bool True if the group was deleted, false otherwise
+     */
+    public function deleteGroup(string $groupName): bool
+    {
+        if (!$this->loadXml()) {
+            return false;
+        }
+
+        // Find the group node
+        $groupNode = $this->xpath->query(
+            '//component[@name="RecentProjectsManager"]/option[@name="groups"]//ProjectGroup[option[@name="name" and @value="' . htmlspecialchars($groupName) . '"]]'
+        )->item(0);
+
+        if (!$groupNode) {
+            return false; // Group not found
+        }
+
+        // Find all projects in this group
+        $projectNodes = $this->xpath->query('option[@name="projects"]/list/option', $groupNode);
+
+        // Remove the group node
+        $groupNode->parentNode->removeChild($groupNode);
 
         return $this->saveXml();
     }

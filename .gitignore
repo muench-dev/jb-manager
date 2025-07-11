@@ -61,5 +61,10 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/symfony
 
+.box.json
+
 # JetBrains IDEs
 .idea
+
+# Temporary files
+/.phpunit.result.cache

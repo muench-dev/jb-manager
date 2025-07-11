@@ -17,6 +17,7 @@ if (file_exists(__DIR__ . "/vendor/autoload.php")) {
 }
 
 use MuenchDev\JbManager\Group\CreateCommand as GroupCreateCommand;
+use MuenchDev\JbManager\Group\DeleteCommand as GroupDeleteCommand;
 use MuenchDev\JbManager\Group\ListCommand as GroupListCommand;
 use MuenchDev\JbManager\Project\MoveCommand as ProjectMoveCommand;
 use MuenchDev\JbManager\Project\OpenCommand as ProjectOpenCommand;
@@ -32,6 +33,7 @@ $application = new Application("JetBrains Project Manager", "1.0.0");
 $projectManager = new ProjectManagerService();
 $application->add(new GroupListCommand($projectManager));
 $application->add(new GroupCreateCommand($projectManager));
+$application->add(new GroupDeleteCommand($projectManager));
 $application->add(new ProjectListCommand($projectManager));
 $application->add(new ProjectMoveCommand($projectManager));
 $application->add(new ProjectOpenCommand($projectManager));

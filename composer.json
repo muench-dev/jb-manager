@@ -8,6 +8,11 @@
             "MuenchDev\\JbManager\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "MuenchDev\\JbManager\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Christian Münch",
