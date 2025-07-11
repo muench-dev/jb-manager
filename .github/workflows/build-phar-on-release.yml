@@ -1,5 +1,8 @@
 name: Build PHAR on Release
 
+permissions:
+  contents: write
+
 on:
   release:
     types: [published]
@@ -41,4 +44,3 @@ jobs:
           files: jb-manager.phar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
