@@ -1,0 +1,8 @@
+{
+        "chmod": "0755",
+        "compression": "GZ",
+        "main": "cli.php",
+        "output": "jb-manager.phar",
+        "stub": true
+        }
+

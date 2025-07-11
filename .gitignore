@@ -68,3 +68,6 @@
 
 # Temporary files
 /.phpunit.result.cache
+
+# Phar files
+*.phar
