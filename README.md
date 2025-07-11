@@ -10,7 +10,7 @@ JB Manager is a PHP command-line tool for managing projects and groups, designed
 - Designed for integration with JetBrains IDEs (e.g., PhpStorm, IntelliJ IDEA)
 
 ## Requirements
-- PHP 7.4 or higher
+- PHP 8.3 or higher
 - Composer (for dependency management)
 - JetBrains IDE (optional, for project opening integration)
 
