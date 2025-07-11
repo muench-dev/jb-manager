@@ -33,6 +33,8 @@ class OpenCommandTest extends BaseTestCase
 
         $commandTester->assertCommandIsSuccessful();
         $output = $commandTester->getDisplay();
+        $expectedPath = getenv('HOME') . '/Workspaces/project-alpha';
+        $this->assertStringContainsString($expectedPath, $output);
         $this->assertStringContainsString("Launch command for 'project-alpha' has been sent.", $output);
     }
 

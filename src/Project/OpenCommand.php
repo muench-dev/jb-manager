@@ -62,13 +62,13 @@ class OpenCommand extends Command
 
         $projectPath = $this->projectManager->findProjectPath($projectName);
 
-        // Replace JetBrains variables in the project path
-        $projectPath = $this->resolvePathVariables($projectPath);
-
         if (!$projectPath) {
             $io->error("Project '{$projectName}' not found.");
             return Command::FAILURE;
         }
+
+        // Replace JetBrains variables in the project path
+        $projectPath = $this->resolvePathVariables($projectPath);
 
         $io->writeln(
             "Attempting to open '{$projectPath}' with '{$ideCommand}'..."
