@@ -1,0 +1,115 @@
+<application>
+    <component name="RecentProjectsManager">
+        <option name="additionalInfo">
+            <map>
+                <entry key="$USER_HOME$/Workspaces/project-alpha">
+                    <value>
+                        <RecentProjectMetaInfo frameTitle="project-alpha – config.json" projectWorkspaceId="1okU3MssAHEictYb5MXeYDCbfAM">
+                            <option name="activationTimestamp" value="1728981068788" />
+                            <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+                            <option name="build" value="IU-242.23339.11" />
+                            <option name="buildTimestamp" value="1727241120000" />
+                            <option name="colorInfo">
+                                <RecentProjectColorInfo associatedIndex="4" />
+                            </option>
+                            <frame x="2415" y="137" width="2605" height="1740" />
+                            <option name="productionCode" value="IU" />
+                            <option name="projectOpenTimestamp" value="1728981050360" />
+                        </RecentProjectMetaInfo>
+                    </value>
+                </entry>
+                <entry key="$USER_HOME$/Workspaces/project-beta">
+                    <value>
+                        <RecentProjectMetaInfo frameTitle="project-beta – settings.yaml" projectWorkspaceId="2Vnk6vHia3l87GdRqBY0BVZT2Aw">
+                            <option name="activationTimestamp" value="1728980592769" />
+                            <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+                            <option name="build" value="IU-242.23339.11" />
+                            <option name="buildTimestamp" value="1727241120000" />
+                            <option name="colorInfo">
+                                <RecentProjectColorInfo associatedIndex="3" />
+                            </option>
+                            <frame x="2415" y="137" width="2605" height="1740" />
+                            <option name="productionCode" value="IU" />
+                            <option name="projectOpenTimestamp" value="1728981069686" />
+                        </RecentProjectMetaInfo>
+                    </value>
+                </entry>
+                <entry key="$USER_HOME$/Workspaces/project-gamma">
+                    <value>
+                        <RecentProjectMetaInfo frameTitle="project-gamma" projectWorkspaceId="2YwRWhNd0N2AproDJGeOFJM26Vw">
+                            <option name="activationTimestamp" value="1729256923968" />
+                            <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+                            <option name="build" value="IU-242.23339.11" />
+                            <option name="buildTimestamp" value="1727241120000" />
+                            <option name="colorInfo">
+                                <RecentProjectColorInfo associatedIndex="2" />
+                            </option>
+                            <frame x="2564" y="74" width="2629" height="1926" />
+                            <option name="productionCode" value="IU" />
+                            <option name="projectOpenTimestamp" value="1729256925137" />
+                        </RecentProjectMetaInfo>
+                    </value>
+                </entry>
+                <entry key="$USER_HOME$/Workspaces/project-delta">
+                    <value>
+                        <RecentProjectMetaInfo frameTitle="project-delta – bootstrap.php" projectWorkspaceId="2njtgJnda70i3urAIeGhheX8uty">
+                            <option name="activationTimestamp" value="1729504343276" />
+                            <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+                            <option name="build" value="IU-242.23339.11" />
+                            <option name="buildTimestamp" value="1727241120000" />
+                            <option name="colorInfo">
+                                <RecentProjectColorInfo associatedIndex="8" />
+                            </option>
+                            <option name="productionCode" value="IU" />
+                            <option name="projectOpenTimestamp" value="1729498423424" />
+                        </RecentProjectMetaInfo>
+                    </value>
+                </entry>
+            </map>
+        </option>
+        <option name="groups">
+            <list>
+                <ProjectGroup>
+                    <option name="name" value="Group A" />
+                    <option name="projects">
+                        <list>
+                            <option value="$USER_HOME$/Workspaces/project-gamma" />
+                        </list>
+                    </option>
+                </ProjectGroup>
+                <ProjectGroup>
+                    <option name="expanded" value="true" />
+                    <option name="name" value="Group B" />
+                    <option name="projects">
+                        <list>
+                            <option value="$USER_HOME$/Workspaces/project-alpha" />
+                        </list>
+                    </option>
+                </ProjectGroup>
+                <ProjectGroup>
+                    <option name="expanded" value="true"/>
+                    <option name="name" value="Temporary"/>
+                </ProjectGroup>
+                <ProjectGroup>
+                    <option name="name" value="Group C" />
+                    <option name="projects">
+                        <list>
+                            <option value="$USER_HOME$/Workspaces/project-delta" />
+                        </list>
+                    </option>
+                </ProjectGroup>
+                <ProjectGroup>
+                    <option name="expanded" value="true" />
+                    <option name="name" value="Group D" />
+                    <option name="projects">
+                        <list>
+                            <option value="$USER_HOME$/Workspaces/project-beta" />
+                        </list>
+                    </option>
+                </ProjectGroup>
+            </list>
+        </option>
+        <option name="lastOpenedProject" value="$USER_HOME$/Workspaces/project-gamma" />
+        <option name="lastProjectLocation" value="$USER_HOME$/Workspaces/general" />
+    </component>
+</application>
