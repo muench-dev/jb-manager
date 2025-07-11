@@ -1,0 +1,44 @@
+name: Build PHAR on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-phar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl
+          coverage: none
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Download Box
+        run: |
+          wget https://github.com/box-project/box/releases/latest/download/box.phar -O box.phar
+          chmod +x box.phar
+
+      - name: Build PHAR
+        run: php box.phar build -c box.json.dist
+
+      - name: Upload PHAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jb-manager.phar
+          path: jb-manager.phar
+
+      - name: Upload PHAR to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: jb-manager.phar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
